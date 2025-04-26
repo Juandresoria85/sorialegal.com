@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SORIA LEGAL</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .main-header {
+      background-color: #012E40;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: url('banner.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #036280;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .nosotros, .servicios, .productos, .consulta {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .perfil img {
+      width: 150px;
+      border-radius: 50%;
+      margin: 1rem 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #012E40;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #7FDBFF;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .main-header {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero {
+        padding: 4rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">SORIA LEGAL</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#consulta">Consulta</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h1>Protegemos tu empresa. Impulsamos tu cumplimiento.</h1>
+    <a href="#canal" class="btn">Canal de Denuncias</a>
+    <a href="#proteccion" class="btn">Protección de Datos</a>
+  </section>
+
+  <section id="nosotros" class="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <div class="perfil">
+      <img src="juan-andres.jpg" alt="Juan Andrés Soria Viteri">
+      <p>Juan Andrés Soria Viteri es abogado con más de 15 años de experiencia en Derecho Laboral, Administrativo, Civil y Societario. Especialista en Compliance y Protección de Datos, se ha desempeñado como asesor de empresas públicas y privadas, docente universitario, y patrocinador en litigios judiciales y administrativos. Fundador de SORIA LEGAL, combina análisis estratégico y profundo conocimiento jurídico para brindar soluciones eficientes y confiables a sus clientes.</p>
+    </div>
+  </section>
+
+  <section id="servicios" class="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Compliance</h3>
+        <p>Asesoría en normativas, procedimientos internos y programas de cumplimiento.</p>
+      </div>
+      <div class="card">
+        <h3>Canal de Denuncias</h3>
+        <p>Implementación de canales seguros y anónimos para reportes internos.</p>
+      </div>
+      <div class="card">
+        <h3>Protección de Datos</h3>
+        <p>Implementación y adecuación a la LOPDP. Atención de requerimientos.</p>
+      </div>
+      <div class="card">
+        <h3>Contratos</h3>
+        <p>Formatos, redacción y revisión de contratos civiles, mercantiles y laborales.</p>
+      </div>
+      <div class="card">
+        <h3>Asesorías</h3>
+        <p>Resolvemos tus consultas jurídicas con enfoque práctico y personalizado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos" class="productos">
+    <h2>Nuestros Productos</h2>
+    <ul>
+      <li>Plantillas Jurídicas</li>
+      <li>Plataformas de Gestión Legal</li>
+    </ul>
+  </section>
+
+  <section id="consulta" class="consulta">
+    <h2>¿Tienes preguntas?</h2>
+    <p>Agenda una consulta ahora.</p>
+    <a href="mailto:juandresoria@gmail.com" class="btn">Agendar Consulta</a>
+  </section>
+
+  <footer id="contacto">
+    <p>Guayaquil - Ecuador | +593 998287710 | juandresoria@gmail.com</p>
+    <p>Síguenos en <a href="https://www.linkedin.com/in/juandresoria">LinkedIn</a></p>
+  </footer>
+</body>
+</html>
