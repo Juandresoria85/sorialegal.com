@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SORIA LEGAL</title>
 
-  <!-- Tu CSS principal -->
-  <link rel="stylesheet" href="style.css"/>
-
-  <!-- OwlCarousel CSS -->
+  <!-- 1) OwlCarousel CSS -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
@@ -23,6 +20,38 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+
+  <!-- 2) Tu CSS principal -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- 3) Estilos específicos para el carrusel -->
+  <style>
+    .owl-carousel { position: relative; }
+    .owl-carousel .item {
+      height: 400px;               /* Ajusta esta altura a tu gusto */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .owl-carousel .item img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: auto;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .hero-text .btn {
+      pointer-events: auto;
+    }
+  </style>
 </head>
 <body>
   <header class="main-header">
@@ -40,18 +69,12 @@
     </nav>
   </header>
 
-  <!-- HERO CON SLIDER -->
+  <!-- HERO / CARRUSEL -->
   <section id="inicio" class="hero">
     <div class="owl-carousel owl-theme">
-      <div class="item">
-        <img src="img/banner.jpg" alt="Banner principal">
-      </div>
-      <div class="item">
-        <img src="img/otra-imagen.jpg" alt="Imagen secundaria">
-      </div>
-      <div class="item">
-        <img src="img/una-mas.jpg" alt="Imagen terciaria">
-      </div>
+      <div class="item"><img src="img/banner.jpg"    alt="Banner principal"></div>
+      <div class="item"><img src="img/otra-imagen.jpg" alt="Imagen secundaria"></div>
+      <div class="item"><img src="img/una-mas.jpg"    alt="Imagen terciaria"></div>
     </div>
     <div class="hero-text">
       <h1>Protegemos tu empresa. Impulsamos tu cumplimiento.</h1>
@@ -128,10 +151,7 @@
     <p>Síguenos en <a href="https://www.linkedin.com/company/sorialegal/?viewAsMember=true" target="_blank">LinkedIn</a></p>
   </footer>
 
-  <!-- jQuery & OwlCarousel JS -->
-    <!-- ...todo tu HTML hasta el footer... -->
-
-  <!-- jQuery & OwlCarousel JS (al final del body) -->
+  <!-- 4) Scripts: jQuery & OwlCarousel JS al final del body -->
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJ+8g5x7n2Qv2cCk3z+3TfTEIYQw4j0KbfGJo="
@@ -143,8 +163,6 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer">
   </script>
-
-  <!-- Inicializador de OwlCarousel -->
   <script>
     $(document).ready(function(){
       $('.owl-carousel').owlCarousel({
@@ -152,10 +170,11 @@
         loop: true,
         autoplay: true,
         autoplayTimeout: 5000,
-        autoplayHoverPause: true
+        autoplayHoverPause: true,
+        nav: true,   /* flechas de navegación */
+        dots: true   /* puntos de paginación */
       });
     });
   </script>
 </body>
 </html>
-
