@@ -129,6 +129,9 @@
   </footer>
 
   <!-- jQuery & OwlCarousel JS -->
+    <!-- ...todo tu HTML hasta el footer... -->
+
+  <!-- jQuery & OwlCarousel JS (al final del body) -->
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJ+8g5x7n2Qv2cCk3z+3TfTEIYQw4j0KbfGJo="
@@ -140,8 +143,10 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer">
   </script>
+
+  <!-- Inicializador de OwlCarousel -->
   <script>
-    $(function(){
+    $(document).ready(function(){
       $('.owl-carousel').owlCarousel({
         items: 1,
         loop: true,
@@ -153,3 +158,4 @@
   </script>
 </body>
 </html>
+
