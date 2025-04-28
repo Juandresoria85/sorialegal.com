@@ -1,13 +1,16 @@
-/* Reset básico y tipografía */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   color: #333;
 }
 
-/* Header */
 .main-header {
   background-color: #012E40;
   color: white;
@@ -16,31 +19,32 @@ body {
   align-items: center;
   padding: 1rem 2rem;
 }
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
-  margin: 0;
-  padding: 0;
 }
+
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
 }
 
-/* Hero (SLIDER) */
+/* ===== HERO / CARRUSEL ===== */
 .hero {
   position: relative;
   overflow: hidden;
-  background-color: #012E40;
+  background-color: #012E40; /* respaldo si tarda en cargar imágenes */
 }
 
-/* Estilos para cada imagen del carousel */
+/* asegúrate de haber incluido owl.theme.default.min.css */
 .owl-carousel .item img {
   width: 100%;
   height: auto;
@@ -56,9 +60,12 @@ nav a {
   text-align: center;
   color: white;
   z-index: 10;
+  pointer-events: none;
+}
+.hero-text .btn {
+  pointer-events: auto;
 }
 
-/* Botones */
 .btn {
   display: inline-block;
   margin: 1rem;
@@ -71,29 +78,24 @@ nav a {
 }
 
 /* Secciones */
-.nosotros,
-.servicios,
-.productos,
-.consulta,
-.publicaciones {
+.nosotros, .servicios, .productos, .consulta, .publicaciones {
   padding: 4rem 2rem;
   text-align: center;
 }
 
-/* Imagen de perfil */
 .perfil img {
   width: 150px;
   border-radius: 50%;
   margin: 1rem 0;
 }
 
-/* Grid de tarjetas */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
+
 .card {
   background: white;
   padding: 2rem;
@@ -101,7 +103,6 @@ nav a {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Lista de productos alineada */
 .productos ul {
   list-style-position: inside;
   padding-left: 0;
@@ -118,6 +119,7 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.9rem;
 }
+
 footer a {
   color: #7FDBFF;
   text-decoration: none;
