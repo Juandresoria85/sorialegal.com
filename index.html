@@ -10,19 +10,16 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     integrity="sha512-tS3fZ3nGQ0JbUPp1vXvPMMUj7Xk+fJjT5KGVoylhw0h0+dXjPllXlKYj61i3j7qVmN1tYvCJ8g3r0hMrYdQYKw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     integrity="sha512-0W4eAsTkl+nu2QeP2YPn+PQquUrQVWggIVNzXrpclgGLWZXTnaedXd8SnRcb9rdigbYpV0ceIB5XVNnYv+v0A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-  <!-- 2) Tu CSS principal -->
+  <!-- 2) Estilos propios -->
   <link rel="stylesheet" href="style.css"/>
+
 </head>
 <body>
   <header class="main-header">
@@ -34,101 +31,129 @@
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#consulta">Consulta</a></li>
+        <li><a href="#" id="open-denuncia">Canal de Denuncias</a></li>
+        <li><a href="#" id="open-proteccion">Protección de Datos</a></li>
         <li><a href="#publicaciones">Publicaciones</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO / CARRUSEL -->
+  <!-- 2.1 HERO / CARRUSEL -->
   <section id="inicio" class="hero">
     <div class="owl-carousel owl-theme">
       <div class="item"><img src="img/otra-imagen.jpg" alt="Banner principal"></div>
     </div>
     <div class="hero-text">
       <h1>Protegemos tu empresa. Impulsamos tu cumplimiento.</h1>
-      <a href="#denuncia" class="btn">Canal de Denuncias</a>
-      <a href="#proteccion" class="btn">Protección de Datos</a>
+      <a href="#consulta" class="btn">Agendar Consulta</a>
     </div>
   </section>
 
-  <!-- FORMULARIO DE DENUNCIA -->
-  <section id="denuncia" class="consulta">
-    <h2>Canal de Denuncias</h2>
-    <form id="formDenuncia">
-      <input name="nombre" placeholder="Nombre y apellidos" required>
-      <input name="email" type="email" placeholder="Email">
-      <input name="telefono" placeholder="Teléfono">
-      <select name="tipo" required>
-        <option value="">Selecciona tipo</option>
-        <option value="acoso">Acoso</option>
-        <option value="discriminacion">Discriminación</option>
-        <option value="violencia">Violencia</option>
-        <option value="corrupcion">Corrupción</option>
-        <option value="otro">Otro</option>
-      </select>
-      <textarea name="descripcion" placeholder="Describe los hechos" required></textarea>
-      <input name="fecha" type="date" required>
-      <button type="submit" class="btn">Enviar Denuncia</button>
-    </form>
+  <!-- 2.2 Sobre Nosotros -->
+  <section id="nosotros" class="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <div class="perfil">
+      <img src="img/juan-andres.jpg" alt="Juan Andrés Soria Viteri">
+      <p>Juan Andrés Soria Viteri es abogado ...</p>
+      <a href="https://www.linkedin.com/in/juandresoria" class="btn" target="_blank">
+        Conoce mi perfil en LinkedIn
+      </a>
+    </div>
   </section>
 
-  <!-- FORMULARIO DE PROTECCIÓN DE DATOS -->
-  <section id="proteccion" class="consulta">
-    <h2>Requerimiento de Protección de Datos</h2>
-    <form id="formProteccion">
-      <input name="titular" placeholder="Nombre del titular" required>
-      <input name="documento" placeholder="Documento de identidad" required>
-      <input name="email" type="email" placeholder="Email" required>
-      <select name="derecho" required>
-        <option value="">Selecciona derecho</option>
-        <option value="acceso">Acceso</option>
-        <option value="rectificacion">Rectificación</option>
-        <option value="supresion">Supresión</option>
-        <option value="otro">Otro</option>
-      </select>
-      <textarea name="detalle" placeholder="Detalle del requerimiento" required></textarea>
-      <button type="submit" class="btn">Enviar Requerimiento</button>
-    </form>
-  </section>
+  <!-- 2.3 Servicios, Productos, Consulta, Publicaciones... (idéntico a tu versión actual) -->
 
-  <!-- Resto de secciones fijas... -->
-  <section id="nosotros" class="nosotros">…</section>
-  <section id="servicios" class="servicios">…</section>
-  <section id="productos" class="productos">…</section>
-  <section id="publicaciones" class="publicaciones">…</section>
-  <footer id="contacto">…</footer>
+  <!-- 2.4 Modales para formularios -->
+  <div class="modal" id="modal-denuncia">
+    <div class="modal-content">
+      <span class="close" data-target="denuncia">&times;</span>
+      <h3>Canal de Denuncias</h3>
+      <form id="form-denuncia">
+        <!-- Aquí reproduce TODOS los campos del PDF original: -->
+        <label>1. Nombres y Apellidos:</label>
+        <input type="text" name="nombre" required/>
+        <!-- ... resto de campos ... -->
+        <button type="submit" class="btn">Enviar Denuncia</button>
+      </form>
+    </div>
+  </div>
 
-  <!-- 3) Scripts: jQuery & OwlCarousel JS al final del body -->
+  <div class="modal" id="modal-proteccion">
+    <div class="modal-content">
+      <span class="close" data-target="proteccion">&times;</span>
+      <h3>Protección de Datos</h3>
+      <form id="form-proteccion">
+        <!-- Campos según PDF de PDP -->
+        <label>1. Nombre Titular:</label>
+        <input type="text" name="titular" required/>
+        <!-- ... resto de campos ... -->
+        <button type="submit" class="btn">Enviar Requerimiento</button>
+      </form>
+    </div>
+  </div>
+
+  <footer id="contacto">
+    <p>Guayaquil – Ecuador | +593 998287710 | 
+      <a href="mailto:juan@sorialegal.com">juan@sorialegal.com</a>
+    </p>
+    <p>Síguenos en 
+      <a href="https://www.linkedin.com/company/sorialegal" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+
+  <!-- 3) Scripts: jQuery, OwlCarousel y nuestro JS -->
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJ+8g5x7n2Qv2cCk3z+3TfTEIYQw4j0KbfGJo="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  </script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-UTNP5fAQ5XZn/67t6HC+N8iG+5X0y/4NwRg/tc9hFqMt+ThCGJPf6t/OvJUfUJ8bKzllFqlSxjTkp4w2/k1+FA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
-
-  <!-- Inicializador de OwlCarousel + envío AJAX -->
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
   <script>
-    $(function(){
-      $('.owl-carousel').owlCarousel({ items:1, loop:true, autoplay:true, autoplayTimeout:5000 });
-      $('#formDenuncia').on('submit', async e => {
-        e.preventDefault();
-        const data = Object.fromEntries(new FormData(e.target));
-        const r = await fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-570e92f5-adc0-416e-8bf1-a455996b4433/default/denuncia', {
-          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
-        });
-        alert((await r.json()).message);
+    // 3.1 Inicializar carousel
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        dots: true
       });
-      $('#formProteccion').on('submit', async e => {
-        e.preventDefault();
-        const data = Object.fromEntries(new FormData(e.target));
-        const r = await fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-570e92f5-adc0-416e-8bf1-a455996b4433/default/proteccion', {
-          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
-        });
-        alert((await r.json()).message);
+    });
+
+    // 3.2 Lógica de apertura/cierre de modales
+    $('#open-denuncia').click(()=> $('#modal-denuncia').show());
+    $('#open-proteccion').click(()=> $('#modal-proteccion').show());
+    $('.close').click(function(){
+      $('#modal-' + $(this).data('target')).hide();
+    });
+
+    // 3.3 Envío AJAX de formularios
+    $('#form-denuncia').submit(function(e){
+      e.preventDefault();
+      $.ajax({
+        url: 'https://faas-nyc1-…/default/denuncia',  // tu URL de Function
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(Object.fromEntries($(this).serializeArray().map(f=>[f.name,f.value]))),
+        success: ()=>{ alert('Denuncia enviada'); $('#modal-denuncia').hide(); },
+        error: ()=>{ alert('Error al enviar, inténtalo de nuevo'); }
+      });
+    });
+    $('#form-proteccion').submit(function(e){
+      e.preventDefault();
+      $.ajax({
+        url: 'https://faas-nyc1-…/default/proteccion',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(Object.fromEntries($(this).serializeArray().map(f=>[f.name,f.value]))),
+        success: ()=>{ alert('Requerimiento enviado'); $('#modal-proteccion').hide(); },
+        error: ()=>{ alert('Error al enviar, inténtalo de nuevo'); }
       });
     });
   </script>
