@@ -1,0 +1,43 @@
+/**
+ * Envía correo (SendGrid) y guarda en CRM
+ */
+const sendgrid = require('@sendgrid/mail');
+const fetch    = require('node-fetch');
+
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+
+exports.main = async (event) => {
+  try {
+    const d = JSON.parse(event.body);
+
+    // 1) Enviar correo
+    await sendgrid.send({
+      to: process.env.NOTIFICATION_EMAIL,
+      from: 'no-reply@sorialegal.com',
+      subject: `Nueva denuncia: ${d.tipo}`,
+      html: `
+        <p><strong>Nombre:</strong> ${d.nombre}</p>
+        <p><strong>Email:</strong> ${d.email}</p>
+        <p><strong>Teléfono:</strong> ${d.telefono}</p>
+        <p><strong>Tipo:</strong> ${d.tipo}</p>
+        <p><strong>Fecha:</strong> ${d.fecha}</p>
+        <p><strong>Descripción:</strong><br/>${d.descripcion}</p>
+      `
+    });
+
+    // 2) Guardar en CRM
+    await fetch(process.env.CRM_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json',
+        'Authorization':`Bearer ${process.env.CRM_TOKEN}`
+      },
+      body: JSON.stringify(d)
+    });
+
+    return { statusCode:200, body: JSON.stringify({ message: 'Denuncia enviada.' }) };
+  } catch(err) {
+    console.error(err);
+    return { statusCode:500, body: JSON.stringify({ message: 'Error interno.' }) };
+  }
+};

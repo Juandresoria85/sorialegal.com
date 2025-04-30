@@ -23,11 +23,8 @@
 
   <!-- 2) Tu CSS principal -->
   <link rel="stylesheet" href="style.css"/>
-  
 </head>
 <body>
-
-  <!-- HEADER -->
   <header class="main-header">
     <div class="logo">SORIA LEGAL</div>
     <nav>
@@ -36,8 +33,7 @@
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#productos">Productos</a></li>
-        <li><a href="#canal">Canal Denuncias</a></li>
-        <li><a href="#proteccion">Protec. Datos</a></li>
+        <li><a href="#consulta">Consulta</a></li>
         <li><a href="#publicaciones">Publicaciones</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -47,162 +43,93 @@
   <!-- HERO / CARRUSEL -->
   <section id="inicio" class="hero">
     <div class="owl-carousel owl-theme">
-      <div class="item"><img src="img/banner.jpg"    alt="Banner principal"></div>
-      <div class="item"><img src="img/otra-imagen.jpg" alt="Imagen secundaria"></div>
+      <div class="item"><img src="img/otra-imagen.jpg" alt="Banner principal"></div>
     </div>
     <div class="hero-text">
       <h1>Protegemos tu empresa. Impulsamos tu cumplimiento.</h1>
-      <a href="#canal" class="btn">Canal de Denuncias</a>
+      <a href="#denuncia" class="btn">Canal de Denuncias</a>
       <a href="#proteccion" class="btn">Protección de Datos</a>
     </div>
   </section>
 
-  <!-- NOSOTROS -->
-  <section id="nosotros" class="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <div class="perfil">
-      <img src="img/juan-andres.jpg" alt="Juan Andrés Soria Viteri">
-      <p>
-        Juan Andrés Soria Viteri es abogado con más de 15 años de experiencia en Derecho Laboral, Administrativo, Civil y Societario. Especialista en Compliance y Protección de Datos, se ha desempeñado como asesor de empresas públicas y privadas, docente universitario y patrocinador en litigios judiciales y administrativos. Fundador de SORIA LEGAL, combina análisis estratégico y profundo conocimiento jurídico para brindar soluciones eficientes y confiables a sus clientes.
-      </p>
-      <a href="https://www.linkedin.com/in/juandresoria" class="btn" target="_blank">LinkedIn Juan Andrés</a>
-    </div>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section id="servicios" class="servicios">
-    <h2>Nuestros Servicios</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Compliance</h3>
-        <p>Asesoría en normativas, procedimientos internos y programas de cumplimiento.</p>
-      </div>
-      <div class="card">
-        <h3>Canal de Denuncias</h3>
-        <p>Canal seguro y anónimo para reportes internos.</p>
-      </div>
-      <div class="card">
-        <h3>Protección de Datos</h3>
-        <p>Implementación y adecuación a la LOPDP. Atención de requerimientos.</p>
-      </div>
-      <div class="card">
-        <h3>Contratos</h3>
-        <p>Redacción y revisión de contratos civiles, mercantiles y laborales.</p>
-      </div>
-      <div class="card">
-        <h3>Asesorías</h3>
-        <p>Consultas jurídicas con enfoque práctico y personalizado.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTOS -->
-  <section id="productos" class="productos">
-    <h2>Nuestros Productos</h2>
-    <ul>
-      <li>Plantillas Jurídicas</li>
-      <li>Plataformas de Gestión Legal</li>
-    </ul>
-  </section>
-
-  <!-- CANAL DE DENUNCIAS -->
-  <section id="canal" class="consulta">
+  <!-- FORMULARIO DE DENUNCIA -->
+  <section id="denuncia" class="consulta">
     <h2>Canal de Denuncias</h2>
-    <form id="denunciaForm">
-      <input type="email"    name="email"   placeholder="Tu correo"        required>
-      <textarea name="texto"  placeholder="Descripción de la denuncia" required></textarea>
+    <form id="formDenuncia">
+      <input name="nombre" placeholder="Nombre y apellidos" required>
+      <input name="email" type="email" placeholder="Email">
+      <input name="telefono" placeholder="Teléfono">
+      <select name="tipo" required>
+        <option value="">Selecciona tipo</option>
+        <option value="acoso">Acoso</option>
+        <option value="discriminacion">Discriminación</option>
+        <option value="violencia">Violencia</option>
+        <option value="corrupcion">Corrupción</option>
+        <option value="otro">Otro</option>
+      </select>
+      <textarea name="descripcion" placeholder="Describe los hechos" required></textarea>
+      <input name="fecha" type="date" required>
       <button type="submit" class="btn">Enviar Denuncia</button>
     </form>
   </section>
 
-  <!-- PROTECCIÓN DE DATOS -->
+  <!-- FORMULARIO DE PROTECCIÓN DE DATOS -->
   <section id="proteccion" class="consulta">
     <h2>Requerimiento de Protección de Datos</h2>
-    <form id="proteccionForm">
-      <input type="email"    name="email"   placeholder="Tu correo"        required>
-      <textarea name="detalle" placeholder="Detalle de tu requerimiento" required></textarea>
+    <form id="formProteccion">
+      <input name="titular" placeholder="Nombre del titular" required>
+      <input name="documento" placeholder="Documento de identidad" required>
+      <input name="email" type="email" placeholder="Email" required>
+      <select name="derecho" required>
+        <option value="">Selecciona derecho</option>
+        <option value="acceso">Acceso</option>
+        <option value="rectificacion">Rectificación</option>
+        <option value="supresion">Supresión</option>
+        <option value="otro">Otro</option>
+      </select>
+      <textarea name="detalle" placeholder="Detalle del requerimiento" required></textarea>
       <button type="submit" class="btn">Enviar Requerimiento</button>
     </form>
   </section>
 
-  <!-- PUBLICACIONES -->
-  <section id="publicaciones" class="publicaciones">
-    <h2>Publicaciones</h2>
-    <p>En LinkedIn:</p>
-    <a href="https://www.linkedin.com/company/sorialegal" class="btn" target="_blank">Ver Publicaciones</a>
-  </section>
+  <!-- Resto de secciones fijas... -->
+  <section id="nosotros" class="nosotros">…</section>
+  <section id="servicios" class="servicios">…</section>
+  <section id="productos" class="productos">…</section>
+  <section id="publicaciones" class="publicaciones">…</section>
+  <footer id="contacto">…</footer>
 
-  <!-- FOOTER -->
-  <footer id="contacto">
-    <p>Guayaquil – Ecuador | +593 998287710 | <a href="mailto:juan@sorialegal.com">juan@sorialegal.com</a></p>
-    <p>Síguenos en <a href="https://www.linkedin.com/company/sorialegal" target="_blank">LinkedIn</a></p>
-  </footer>
-
-  <!-- 3) jQuery & OwlCarousel JS al final del body -->
+  <!-- 3) Scripts: jQuery & OwlCarousel JS al final del body -->
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJ+8g5x7n2Qv2cCk3z+3TfTEIYQw4j0KbfGJo="
-    crossorigin="anonymous">
-  </script>
+    crossorigin="anonymous"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-UTNP5fAQ5XZn/67t6HC+N8iG+5X0y/4NwRg/tc9hFqMt+ThCGJPf6t/OvJUfUJ8bKzllFqlSxjTkp4w2/k1+FA=="
     crossorigin="anonymous"
-    referrerpolicy="no-referrer">
-  </script>
+    referrerpolicy="no-referrer"></script>
 
+  <!-- Inicializador de OwlCarousel + envío AJAX -->
   <script>
-    // Inicializador de OwlCarousel
-    $(document).ready(function(){
-      $('.owl-carousel').owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true
+    $(function(){
+      $('.owl-carousel').owlCarousel({ items:1, loop:true, autoplay:true, autoplayTimeout:5000 });
+      $('#formDenuncia').on('submit', async e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.target));
+        const r = await fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-570e92f5-adc0-416e-8bf1-a455996b4433/default/denuncia', {
+          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
+        });
+        alert((await r.json()).message);
       });
-    });
-
-    // Envío del formulario de denuncias
-    document.getElementById('denunciaForm').addEventListener('submit', async e => {
-      e.preventDefault();
-      const email = e.target.email.value;
-      const texto = e.target.texto.value;
-      try {
-        const res = await fetch(
-          'https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-570e92f5-adc0-416e-8bf1-a455996b4433/default/denuncia',
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, texto })
-          }
-        );
-        const { message } = await res.json();
-        alert(message);
-      } catch {
-        alert('Error enviando la denuncia');
-      }
-    });
-
-    // Envío del formulario de protección de datos
-    document.getElementById('proteccionForm').addEventListener('submit', async e => {
-      e.preventDefault();
-      const email   = e.target.email.value;
-      const detalle = e.target.detalle.value;
-      try {
-        const res = await fetch(
-          'https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-570e92f5-adc0-416e-8bf1-a455996b4433/default/proteccion',
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, detalle })
-          }
-        );
-        const { message } = await res.json();
-        alert(message);
-      } catch {
-        alert('Error enviando tu requerimiento');
-      }
+      $('#formProteccion').on('submit', async e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.target));
+        const r = await fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-570e92f5-adc0-416e-8bf1-a455996b4433/default/proteccion', {
+          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
+        });
+        alert((await r.json()).message);
+      });
     });
   </script>
 </body>

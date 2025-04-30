@@ -1,0 +1,13 @@
+name: sorialegal-functions        # nombre arbitrario para este conjunto de funciones
+namespace: fn-570e92f5-adc0-416e-8bf1-a455996b4433
+
+functions:
+  denuncia:
+    path: ./denuncia               # carpeta donde está el código de la función "denuncia"
+    runtime: nodejs16
+    web: true
+
+  proteccion:
+    path: ./proteccion             # carpeta donde está el código de la función "proteccion"
+    runtime: nodejs16
+    web: true
