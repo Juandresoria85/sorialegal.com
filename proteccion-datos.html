@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Protección de Datos - SORIA LEGAL</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">SORIA LEGAL</div>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#productos">Productos</a></li>
+        <li><a href="index.html#formularios">Formularios</a></li>
+        <li><a href="index.html#redes-sociales">Redes Sociales</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="formulario-pagina py-5">
+      <div class="container">
+        <h3>Protección de Datos</h3>
+        <form action="https://formspree.io/f/mwpojyee" method="POST" role="form" aria-labelledby="proteccion-form-title">
+          <input type="hidden" name="_subject" value="ProteccionDatos SoriaLegal">
+    
+          <fieldset>
+            <legend id="proteccion-form-title">Información del Solicitante</legend>
+    
+            <label for="proteccion-nombre">Nombre y Apellidos:</label>
+            <input type="text" id="proteccion-nombre" name="nombre_solicitante" placeholder="Nombre completo" required>
+    
+            <label for="proteccion-tipo-doc">Documento de identidad:</label>
+            <select id="proteccion-tipo-doc" name="tipo_documento" required onchange="document.getElementById('proteccion-doc-otro-especificar').disabled = (this.value !== 'Otro'); document.getElementById('proteccion-doc-otro-especificar').required = (this.value === 'Otro');">
+              <option value="" disabled selected>Seleccione tipo</option>
+              <option value="Cédula">Cédula</option>
+              <option value="Pasaporte">Pasaporte</option>
+              <option value="Otro">Otro (especificar)</option>
+            </select>
+            <input type="text" id="proteccion-doc-otro-especificar" name="tipo_documento_otro" placeholder="Especifique otro tipo de documento" disabled style="margin-top: 5px; margin-bottom: 10px;">
+            
+            <label for="proteccion-numero-doc">Número de Documento:</label>
+            <input type="text" id="proteccion-numero-doc" name="numero_documento" placeholder="Número de su documento" required>
+    
+            <p>Actúo en calidad de:</p>
+            <label><input type="radio" name="actua_como" value="Titular" required> Titular de los datos</label>
+            <label><input type="radio" name="actua_como" value="Representante"> Representante del titular (adjuntar poder/autorización)</label>
+            
+            <label for="proteccion-email">Correo electrónico de contacto:</label>
+            <input type="email" id="proteccion-email" name="_replyto" placeholder="suemail@example.com" required>
+          </fieldset>
+    
+          <fieldset>
+            <legend>Detalles de la Solicitud</legend>
+    
+            <p>Derecho que desea ejercer (seleccione todos los que apliquen):</p>
+            <label><input type="checkbox" name="derecho_ejercido[]" value="Revocación del consentimiento"> Revocación del consentimiento</label>
+            <label><input type="checkbox" name="derecho_ejercido[]" value="Rectificación de datos"> Rectificación de datos</label>
+            <label><input type="checkbox" name="derecho_ejercido[]" value="Supresión de datos (Olvido)"> Supresión de datos (Olvido)</label>
+            <label><input type="checkbox" name="derecho_ejercido[]" value="Acceso a mis datos"> Acceso a mis datos</label>
+            <label><input type="checkbox" name="derecho_ejercido[]" value="Oposición al tratamiento"> Oposición al tratamiento</label>
+            <label>
+              <input type="checkbox" name="derecho_ejercido[]" value="Otro" onchange="document.getElementById('proteccion-derecho-otro-especificar').disabled = !this.checked; document.getElementById('proteccion-derecho-otro-especificar').required = this.checked;"> Otro derecho
+            </label>
+            <input type="text" id="proteccion-derecho-otro-especificar" name="derecho_ejercido_otro_descripcion" placeholder="Por favor, especifique otro derecho" disabled style="margin-top: 5px; margin-bottom: 10px;">
+    
+            <label for="proteccion-descripcion">Descripción y alcance de su petición:</label>
+            <textarea id="proteccion-descripcion" name="descripcion_peticion" rows="6" required placeholder="Sea claro y específico sobre los datos y la acción que solicita."></textarea>
+    
+            <!--
+            <label for="proteccion-adjuntos">Adjuntar documentos de identidad o soporte (copia de cédula, autorización si es representante, etc. Max 10MB):</label>
+            <input type="file" id="proteccion-adjuntos" name="adjuntos_proteccion[]" multiple>
+            -->
+          </fieldset>
+          
+          <button type="submit" class="btn-primary">Enviar Solicitud de Protección de Datos</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <p>Guayaquil – Ecuador | +593 998287710 | <a href="mailto:juan@sorialegal.com">juan@sorialegal.com</a></p>
+    <p>Síguenos en <a href="https://www.linkedin.com/company/sorialegal" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJ+8g5x7n2Qv2cCk3z+3TfTEIYQw4j0KbfGJo="
+    crossorigin="anonymous">
+  </script>
+</body>
+</html>
