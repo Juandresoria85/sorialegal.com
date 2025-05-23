@@ -34,7 +34,7 @@
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#formularios">Formularios</a></li>
-        <li><a href="#publicaciones">Publicaciones</a></li>
+        <li><a href="#redes-sociales">Redes Sociales</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -43,7 +43,9 @@
   <!-- HERO / CARRUSEL -->
   <section id="inicio" class="hero">
     <div class="owl-carousel owl-theme">
-      <div class="item"><img src="img/otra-imagen.jpg" alt="Banner principal"></div>
+          <div class="item"><img src="img/banner.jpg" alt="Soria Legal - Servicios de Compliance y Protección de Datos"></div>
+          <div class="item"><img src="img/otra-imagen.jpg" alt="Soria Legal - Asesoramiento Legal Integral para Empresas"></div>
+          <div class="item"><img src="img/una-mas.jpg" alt="Soria Legal - Expertos en Derecho Laboral y Societario"></div>
     </div>
     <div class="hero-text">
       <h1>Protegemos tu empresa. Impulsamos tu cumplimiento.</h1>
@@ -58,7 +60,7 @@
       <p>
         Juan Andrés Soria Viteri es abogado con más de 15 años de experiencia en Derecho Laboral, Administrativo, Civil y Societario. Especialista en Compliance y Protección de Datos, se ha desempeñado como asesor de empresas públicas y privadas, docente universitario y patrocinador en litigios judiciales y administrativos. Fundador de SORIA LEGAL, combina análisis estratégico y profundo conocimiento jurídico para brindar soluciones eficientes y confiables a sus clientes.
       </p>
-      <a href="https://www.linkedin.com/in/juandresoria" class="btn" target="_blank">Ver mi LinkedIn</a>
+      <a href="https://www.linkedin.com/in/juandresoria" class="btn-primary" target="_blank">Ver mi LinkedIn</a>
     </div>
   </section>
 
@@ -83,50 +85,83 @@
     </ul>
   </section>
 
+  <!-- PUBLICACIONES DESTACADAS DE LINKEDIN -->
+  <section id="publicaciones-linkedin" class="publicaciones-linkedin py-5"> <!-- Using py-5 for padding based on new scheme, adjust if needed -->
+    <div class="container"> <!-- Optional container for content width control -->
+      <h2 class="text-center mb-4">Publicaciones Destacadas</h2>
+      <p class="text-center mb-5">Una selección de nuestros análisis y artículos recientes compartidos en LinkedIn.</p>
+      
+      <div class="list-publicaciones">
+        <!-- Ejemplo de Publicación 1 -->
+        <div class="publicacion-item mb-4">
+          <h3 class="h5"><a href="URL_DEL_ARTICULO_DE_LINKEDIN_1" target="_blank" rel="noopener noreferrer">Título del Artículo de LinkedIn 1</a></h3>
+          <p class="text-muted small">Fecha de publicación o breve descripción aquí.</p>
+          <a href="URL_DEL_ARTICULO_DE_LINKEDIN_1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Leer más en LinkedIn</a>
+        </div>
+        
+        <!-- Ejemplo de Publicación 2 -->
+        <div class="publicacion-item mb-4">
+          <h3 class="h5"><a href="URL_DEL_ARTICULO_DE_LINKEDIN_2" target="_blank" rel="noopener noreferrer">Título del Artículo de LinkedIn 2</a></h3>
+          <p class="text-muted small">Fecha de publicación o breve descripción aquí.</p>
+          <a href="URL_DEL_ARTICULO_DE_LINKEDIN_2" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Leer más en LinkedIn</a>
+        </div>
+        
+        <!-- Agrega más publicaciones aquí -->
+        
+        <p class="text-center mt-5">
+          Para ver todas nuestras publicaciones, <a href="https://www.linkedin.com/company/sorialegal/posts/" target="_blank" rel="noopener noreferrer">visita nuestro perfil en LinkedIn</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- FORMULARIOS -->
   <section id="formularios" class="consulta">
     <h2>Formularios</h2>
 
     <!-- DENUNCIA -->
     <h3>Canal de Denuncias</h3>
-    <form action="mailto:juan@sorialegal.com?subject=Denuncia%20SoriaLegal" method="post" enctype="text/plain">
+    <form action="https://formspree.io/f/mwpojyee" method="post">
+      <input type="hidden" name="_subject" value="Denuncia SoriaLegal">
       <input type="text" name="Nombre" placeholder="Nombre completo" required>
-      <input type="email" name="Correo" placeholder="Correo electrónico">
+      <input type="email" name="_replyto" placeholder="Correo electrónico">
       <label><input type="checkbox" name="Tipo" value="Acoso"> Acoso</label>
       <label><input type="checkbox" name="Tipo" value="Discriminacion"> Discriminación</label>
       <label><input type="checkbox" name="Tipo" value="Violencia"> Violencia</label>
       <label><input type="checkbox" name="Tipo" value="Otro"> Otro</label>
       <textarea name="Hechos" placeholder="Describa los hechos" required></textarea>
-      <button type="submit" class="btn">Enviar Denuncia</button>
+      <button type="submit" class="btn-primary">Enviar Denuncia</button>
     </form>
 
     <!-- PROTECCION DE DATOS -->
     <h3>Protección de Datos</h3>
-    <form action="mailto:juan@sorialegal.com?subject=ProteccionDatos%20SoriaLegal" method="post" enctype="text/plain">
+    <form action="https://formspree.io/f/mwpojyee" method="post">
+      <input type="hidden" name="_subject" value="ProteccionDatos SoriaLegal">
       <input type="text" name="Nombre" placeholder="Nombre completo" required>
-      <input type="email" name="Correo" placeholder="Correo electrónico" required>
+      <input type="email" name="_replyto" placeholder="Correo electrónico" required>
       <label><input type="checkbox" name="Tipo" value="Rectificacion"> Rectificación</label>
       <label><input type="checkbox" name="Tipo" value="Supresion"> Supresión</label>
       <label><input type="checkbox" name="Tipo" value="Otro"> Otro</label>
       <textarea name="Detalles" placeholder="Detalles de su petición" required></textarea>
-      <button type="submit" class="btn">Enviar Requerimiento</button>
+      <button type="submit" class="btn-primary">Enviar Requerimiento</button>
     </form>
 
     <!-- CONSULTA / CITA -->
     <h3>Agendar Consulta</h3>
-    <form action="mailto:juan@sorialegal.com?subject=Consulta%20SoriaLegal" method="post" enctype="text/plain">
+    <form action="https://formspree.io/f/mwpojyee" method="post">
+      <input type="hidden" name="_subject" value="Consulta SoriaLegal">
       <input type="text" name="Nombre" placeholder="Nombre completo" required>
-      <input type="email" name="Correo" placeholder="Correo electrónico" required>
+      <input type="email" name="_replyto" placeholder="Correo electrónico" required>
       <textarea name="Mensaje" placeholder="¿En qué podemos ayudarle?" required></textarea>
-      <button type="submit" class="btn">Enviar Consulta</button>
+      <button type="submit" class="btn-primary">Enviar Consulta</button>
     </form>
   </section>
 
-  <!-- PUBLICACIONES -->
-  <section id="publicaciones" class="publicaciones">
-    <h2>Publicaciones</h2>
-    <p>Síguenos en LinkedIn:</p>
-    <a href="https://www.linkedin.com/company/sorialegal" class="btn" target="_blank">Ver Publicaciones</a>
+  <!-- REDES SOCIALES -->
+  <section id="redes-sociales" class="redes-sociales text-center py-5">
+    <h2>Síguenos</h2>
+    <p>Mantente al día con nuestras últimas noticias y análisis en LinkedIn.</p>
+    <a href="https://www.linkedin.com/company/sorialegal" class="btn btn-primary" target="_blank">Visita Soria Legal en LinkedIn</a>
   </section>
 
   <!-- FOOTER -->
