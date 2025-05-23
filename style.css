@@ -64,14 +64,15 @@ nav a:hover {
   z-index: 1; /* Places the overlay above the carousel images */
 }
 
+/* Commented out OwlCarousel specific styles */
+/*
 .owl-carousel {
-  display: block; /* Ensure it's a block-level element */
-  width: 100%;   /* Occupy full width of its container (.hero) */
-  position: relative; /* Needed for Owl's absolute positioning of nav/dots */
-  z-index: 0; /* Explicitly set behind overlay */
+  display: block; 
+  width: 100%;   
+  position: relative; 
+  z-index: 0; 
 }
 
-/* This is a common fix for WebKit rendering issues with transforms */
 .owl-carousel .owl-item {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);
@@ -82,6 +83,23 @@ nav a:hover {
   height: auto;
   display: block;
 }
+*/
+
+.static-banner-image {
+  width: 100%;
+  height: 60vh; /* Example: 60% of viewport height. Adjust as desired. */
+  /* Or use a fixed height like: height: 450px; */
+  overflow: hidden; /* Important if using object-fit on the image */
+  position: relative; /* To keep it in the normal flow under the absolute hero text/overlay */
+  z-index: 0; /* Ensure it's behind the hero::before overlay */
+}
+.static-banner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scales the image to maintain aspect ratio while filling the element's entire content box */
+}
+
 .hero-text {
   position: absolute;
   top:50%; left:50%;
@@ -194,9 +212,74 @@ form input:focus, form textarea:focus {
 }
 form label {
   display:block;
-  margin-bottom:0.25rem;
+  margin-bottom:0.25rem; /* Default spacing for labels */
   cursor:pointer;
+  font-weight: 500; /* Slightly bolder labels */
+  color: var(--color-text-dark);
 }
+
+form fieldset {
+  border: 1px solid var(--color-border-form);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+form legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-left: 1rem; 
+  font-size: 1.1em; /* Slightly larger legend text */
+}
+
+/* Specific input type styling */
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border-form);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5z%22%20fill%3D%22%23666%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 1.2em auto, 100%;
+  cursor: pointer;
+}
+
+form label input[type="radio"],
+form label input[type="checkbox"] {
+  width: auto; /* Override full width for these */
+  margin-right: 0.5em;
+  vertical-align: middle; /* Align with label text */
+}
+
+/* Add some space above paragraphs that introduce radio/checkbox groups if they are not the first child of fieldset */
+form fieldset > p + label {
+    margin-top: 0.25rem; 
+}
+form fieldset > p { /* Paragraphs used as sub-headings for radio/checkbox groups */
+    font-weight: normal;
+    color: var(--color-text-medium);
+    margin-bottom: 0.5rem;
+    margin-top: 1rem; /* Space above these descriptive paragraphs */
+}
+form fieldset > p:first-child {
+    margin-top: 0; /* No extra top margin for the first p in a fieldset */
+}
+
+
+/* Style for the conditionally displayed text input */
+input[disabled] {
+  background-color: var(--color-bg-light) !important; /* Lighter background for disabled */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 
 /* FOOTER */
 footer {
@@ -219,6 +302,17 @@ footer a:hover {
 @media(max-width:768px){
   .main-header { flex-direction:column; }
   nav ul { flex-direction:column; align-items:center; }
+  form {
+    max-width: none; /* Allow full width within its container's padding */
+    padding: 1rem; 
+    margin: 1rem 0; 
+  }
+  form fieldset {
+    padding: 1rem; 
+  }
+  form legend {
+    margin-left: 0.5rem; 
+  }
 }
 
 /* Adjustments for smaller mobile screens */
