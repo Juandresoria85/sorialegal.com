@@ -47,8 +47,13 @@
     <div class="static-banner-image">
       <img src="img/otra-imagen.jpg" alt="Soria Legal - Asesoramiento Legal Integral para Empresas">
     </div>
-    <div class="hero-text">
-      <h1>Protegemos tu empresa. Impulsamos tu cumplimiento.</h1>
+    <div class="hero-content-wrapper">
+      <div class="hero-text">
+        <h1>Protegemos tu empresa. Impulsamos tu cumplimiento.</h1>
+      </div>
+      <div class="hero-cta text-center"> 
+        <a href="#formularios" class="btn btn-primary">Agendar una Consulta</a>
+      </div>
     </div>
   </section>
 
@@ -69,8 +74,14 @@
     <h2>Nuestros Servicios</h2>
     <div class="grid">
       <div class="card"><h3>Compliance</h3><p>Programas internos y normativas de cumplimiento.</p></div>
-      <div class="card"><h3>Canal de Denuncias</h3><p>Reportes seguros y anónimos.</p></div>
-      <div class="card"><h3>Protección de Datos</h3><p>Adecuación a la LOPDP y atención de requerimientos.</p></div>
+      <div class="card">
+        <h3><a href="canal-denuncias.html" class="service-link">Canal de Denuncias</a></h3>
+        <p>Reportes seguros y anónimos. <a href="canal-denuncias.html" class="service-link-inline">Acceder al canal</a>.</p>
+      </div>
+      <div class="card">
+        <h3><a href="proteccion-datos.html" class="service-link">Protección de Datos</a></h3>
+        <p>Adecuación a la LOPDP y atención de requerimientos. <a href="proteccion-datos.html" class="service-link-inline">Ejercer derechos</a>.</p>
+      </div>
       <div class="card"><h3>Contratos</h3><p>Redacción y revisión de contratos civiles, mercantiles y laborales.</p></div>
       <div class="card"><h3>Asesorías</h3><p>Consultas jurídicas con enfoque práctico.</p></div>
     </div>
@@ -92,22 +103,9 @@
       <p class="text-center mb-5">Una selección de nuestros análisis y artículos recientes compartidos en LinkedIn.</p>
       
       <div class="list-publicaciones">
-        <!-- Ejemplo de Publicación 1 -->
-        <div class="publicacion-item mb-4">
-          <h3 class="h5"><a href="URL_DEL_ARTICULO_DE_LINKEDIN_1" target="_blank" rel="noopener noreferrer">Título del Artículo de LinkedIn 1</a></h3>
-          <p class="text-muted small">Fecha de publicación o breve descripción aquí.</p>
-          <a href="URL_DEL_ARTICULO_DE_LINKEDIN_1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Leer más en LinkedIn</a>
+        <div class="linkedin-iframe-container">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7331284258122039298?collapsed=1" height="568" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
         </div>
-        
-        <!-- Ejemplo de Publicación 2 -->
-        <div class="publicacion-item mb-4">
-          <h3 class="h5"><a href="URL_DEL_ARTICULO_DE_LINKEDIN_2" target="_blank" rel="noopener noreferrer">Título del Artículo de LinkedIn 2</a></h3>
-          <p class="text-muted small">Fecha de publicación o breve descripción aquí.</p>
-          <a href="URL_DEL_ARTICULO_DE_LINKEDIN_2" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Leer más en LinkedIn</a>
-        </div>
-        
-        <!-- Agrega más publicaciones aquí -->
-        
         <p class="text-center mt-5">
           Para ver todas nuestras publicaciones, <a href="https://www.linkedin.com/company/sorialegal/posts/" target="_blank" rel="noopener noreferrer">visita nuestro perfil en LinkedIn</a>.
         </p>
@@ -119,137 +117,12 @@
   <section id="formularios" class="consulta">
     <h2>Formularios</h2>
 
-    <!-- DENUNCIA -->
-    <h3>Canal de Denuncias</h3>
-    <form action="https://formspree.io/f/mwpojyee" method="POST" role="form" aria-labelledby="denuncia-form-title">
-      <input type="hidden" name="_subject" value="Denuncia SoriaLegal">
-      
-      <fieldset>
-        <legend id="denuncia-form-title">Información del Denunciante</legend>
-
-        <label for="denuncia-nombre">Nombre y Apellidos:</label>
-        <input type="text" id="denuncia-nombre" name="nombre" placeholder="Nombre completo" required>
-
-        <label for="denuncia-notificaciones">¿Desea ser contactado para seguimiento y notificaciones?</label>
-        <select id="denuncia-notificaciones" name="notificaciones" required>
-          <option value="" disabled selected>Seleccione una opción</option>
-          <option value="Sí">Sí, deseo ser contactado</option>
-          <option value="No">No, prefiero mantener el anonimato total</option>
-        </select>
-
-        <label for="denuncia-email">Correo electrónico (necesario si desea notificaciones):</label>
-        <input type="email" id="denuncia-email" name="_replyto" placeholder="suemail@example.com"> 
-        <!-- 'required' attribute will be handled by JS based on 'notificaciones' or made conditionally required by Formspree if possible. For now, not strictly required on the field itself to allow anonymous. -->
-
-        <label for="denuncia-telefono">Teléfono (opcional, útil si desea notificaciones):</label>
-        <input type="tel" id="denuncia-telefono" name="telefono" placeholder="Ej: 0991234567">
-      </fieldset>
-
-      <fieldset>
-        <legend>Información sobre su Vinculación</legend>
-        
-        <p>¿Es usted trabajador/a de la empresa?</p>
-        <label><input type="radio" name="es_trabajador" value="Sí" required> Sí</label>
-        <label><input type="radio" name="es_trabajador" value="No"> No</label>
-
-        <p>¿Es usted la víctima directa de los hechos denunciados?</p>
-        <label><input type="radio" name="es_victima" value="Sí" required> Sí</label>
-        <label><input type="radio" name="es_victima" value="No"> No</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Detalles de la Denuncia</legend>
-
-        <p>Tipo de denuncia (seleccione todas las que apliquen):</p>
-        <label><input type="checkbox" name="tipo_denuncia[]" value="Acoso"> Acoso</label>
-        <label><input type="checkbox" name="tipo_denuncia[]" value="Discriminacion"> Discriminación</label>
-        <label><input type="checkbox" name="tipo_denuncia[]" value="Violencia"> Violencia</label>
-        <label><input type="checkbox" name="tipo_denuncia[]" value="Corrupcion"> Corrupción</label>
-        <label><input type="checkbox" name="tipo_denuncia[]" value="Accidente Laboral"> Accidente Laboral</label>
-        <label>
-          <input type="checkbox" name="tipo_denuncia[]" value="Otro" onchange="document.getElementById('denuncia-tipo-otro-especificar').disabled = !this.checked; document.getElementById('denuncia-tipo-otro-especificar').required = this.checked;"> Otro tipo
-        </label>
-        <input type="text" id="denuncia-tipo-otro-especificar" name="tipo_denuncia_otro_descripcion" placeholder="Por favor, especifique otro tipo" disabled style="margin-top: 5px; margin-bottom: 10px;">
-        <!-- Note: The onchange JS is basic. More robust handling might be needed later if this doesn't work in all environments the worker tests. -->
-        <!-- At least one checkbox should be selected. This can be enforced with JavaScript or server-side. For now, no direct HTML required attribute on checkboxes for a group. -->
-
-        <label for="denuncia-descripcion">Descripción detallada de los hechos (sea lo más específico posible):</label>
-        <textarea id="denuncia-descripcion" name="descripcion" rows="6" required placeholder="Describa qué ocurrió, quiénes estuvieron involucrados, etc."></textarea>
-
-        <label for="denuncia-fecha">Fecha aproximada de los hechos:</label>
-        <input type="date" id="denuncia-fecha" name="fecha" required>
-
-        <label for="denuncia-lugar">Lugar donde ocurrieron los hechos:</label>
-        <input type="text" id="denuncia-lugar" name="lugar" placeholder="Ej: Oficina principal, área de producción" required>
-        
-        <label for="denuncia-denunciado">Persona(s) contra quien(es) se dirige la denuncia (si aplica):</label>
-        <input type="text" id="denuncia-denunciado" name="denunciado" placeholder="Nombres, cargos si los conoce">
-
-        <label for="denuncia-testigos">Persona(s) que presenciaron los hechos (si aplica y los conoce):</label>
-        <input type="text" id="denuncia-testigos" name="testigos" placeholder="Nombres, cargos si los conoce">
-
-        <label for="denuncia-adjuntos">Adjuntar evidencias (fotos, documentos, etc. Max 10MB por archivo):</label>
-        <input type="file" id="denuncia-adjuntos" name="adjuntos[]" multiple> 
-        <!-- Formspree free plan might have limitations on file uploads (size, number, or availability). User should check their Formspree plan. Name as array adjuntos[] for multiple files. -->
-      </fieldset>
-      
-      <button type="submit" class="btn-primary">Enviar Denuncia</button>
-    </form>
-
-    <!-- PROTECCION DE DATOS -->
-    <h3>Protección de Datos</h3>
-    <form action="https://formspree.io/f/mwpojyee" method="POST" role="form" aria-labelledby="proteccion-form-title">
-      <input type="hidden" name="_subject" value="ProteccionDatos SoriaLegal">
-
-      <fieldset>
-        <legend id="proteccion-form-title">Información del Solicitante</legend>
-
-        <label for="proteccion-nombre">Nombre y Apellidos:</label>
-        <input type="text" id="proteccion-nombre" name="nombre_solicitante" placeholder="Nombre completo" required>
-
-        <label for="proteccion-tipo-doc">Documento de identidad:</label>
-        <select id="proteccion-tipo-doc" name="tipo_documento" required onchange="document.getElementById('proteccion-doc-otro-especificar').disabled = (this.value !== 'Otro'); document.getElementById('proteccion-doc-otro-especificar').required = (this.value === 'Otro');">
-          <option value="" disabled selected>Seleccione tipo</option>
-          <option value="Cédula">Cédula</option>
-          <option value="Pasaporte">Pasaporte</option>
-          <option value="Otro">Otro (especificar)</option>
-        </select>
-        <input type="text" id="proteccion-doc-otro-especificar" name="tipo_documento_otro" placeholder="Especifique otro tipo de documento" disabled style="margin-top: 5px; margin-bottom: 10px;">
-        
-        <label for="proteccion-numero-doc">Número de Documento:</label>
-        <input type="text" id="proteccion-numero-doc" name="numero_documento" placeholder="Número de su documento" required>
-
-        <p>Actúo en calidad de:</p>
-        <label><input type="radio" name="actua_como" value="Titular" required> Titular de los datos</label>
-        <label><input type="radio" name="actua_como" value="Representante"> Representante del titular (adjuntar poder/autorización)</label>
-        
-        <label for="proteccion-email">Correo electrónico de contacto:</label>
-        <input type="email" id="proteccion-email" name="_replyto" placeholder="suemail@example.com" required>
-      </fieldset>
-
-      <fieldset>
-        <legend>Detalles de la Solicitud</legend>
-
-        <p>Derecho que desea ejercer (seleccione todos los que apliquen):</p>
-        <label><input type="checkbox" name="derecho_ejercido[]" value="Revocación del consentimiento"> Revocación del consentimiento</label>
-        <label><input type="checkbox" name="derecho_ejercido[]" value="Rectificación de datos"> Rectificación de datos</label>
-        <label><input type="checkbox" name="derecho_ejercido[]" value="Supresión de datos (Olvido)"> Supresión de datos (Olvido)</label>
-        <label><input type="checkbox" name="derecho_ejercido[]" value="Acceso a mis datos"> Acceso a mis datos</label>
-        <label><input type="checkbox" name="derecho_ejercido[]" value="Oposición al tratamiento"> Oposición al tratamiento</label>
-        <label>
-          <input type="checkbox" name="derecho_ejercido[]" value="Otro" onchange="document.getElementById('proteccion-derecho-otro-especificar').disabled = !this.checked; document.getElementById('proteccion-derecho-otro-especificar').required = this.checked;"> Otro derecho
-        </label>
-        <input type="text" id="proteccion-derecho-otro-especificar" name="derecho_ejercido_otro_descripcion" placeholder="Por favor, especifique otro derecho" disabled style="margin-top: 5px; margin-bottom: 10px;">
-
-        <label for="proteccion-descripcion">Descripción y alcance de su petición:</label>
-        <textarea id="proteccion-descripcion" name="descripcion_peticion" rows="6" required placeholder="Sea claro y específico sobre los datos y la acción que solicita."></textarea>
-
-        <label for="proteccion-adjuntos">Adjuntar documentos de identidad o soporte (copia de cédula, autorización si es representante, etc. Max 10MB):</label>
-        <input type="file" id="proteccion-adjuntos" name="adjuntos_proteccion[]" multiple>
-      </fieldset>
-      
-      <button type="submit" class="btn-primary">Enviar Solicitud de Protección de Datos</button>
-    </form>
+    <div class="text-center mb-5">
+      <p class="lead mb-4">Para denuncias o solicitudes específicas de protección de datos, por favor utilice nuestros canales dedicados:</p>
+      <a href="canal-denuncias.html" class="btn btn-primary mr-2 ml-2">Acceder al Canal de Denuncias</a>
+      <a href="proteccion-datos.html" class="btn btn-primary mr-2 ml-2">Solicitud de Protección de Datos</a>
+    </div>
+    <hr class="my-5">
 
     <!-- REQUERIMIENTO GENERAL / CONSULTA -->
     <h3>Requerimiento General / Consulta</h3>
@@ -281,8 +154,10 @@
         <label for="consulta-hora-preferida">Hora preferida (opcional, complementa la fecha):</label>
         <input type="time" id="consulta-hora-preferida" name="hora_preferida_opcional">
 
+        <!--
         <label for="consulta-adjuntos">Adjuntar archivos relevantes (opcional, Max 10MB):</label>
         <input type="file" id="consulta-adjuntos" name="adjuntos_consulta[]" multiple>
+        -->
       </fieldset>
       
       <button type="submit" class="btn-primary">Enviar Consulta / Requerimiento</button>

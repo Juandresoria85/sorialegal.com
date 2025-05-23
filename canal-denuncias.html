@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canal de Denuncias - SORIA LEGAL</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">SORIA LEGAL</div>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#productos">Productos</a></li>
+        <li><a href="index.html#formularios">Formularios</a></li>
+        <li><a href="index.html#redes-sociales">Redes Sociales</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="formulario-pagina py-5">
+      <div class="container">
+        <h3>Canal de Denuncias</h3>
+        <form action="https://formspree.io/f/mwpojyee" method="POST" role="form" aria-labelledby="denuncia-form-title">
+          <input type="hidden" name="_subject" value="Denuncia SoriaLegal">
+          
+          <fieldset>
+            <legend id="denuncia-form-title">Información del Denunciante</legend>
+    
+            <label for="denuncia-nombre">Nombre y Apellidos:</label>
+            <input type="text" id="denuncia-nombre" name="nombre" placeholder="Nombre completo" required>
+    
+            <label for="denuncia-notificaciones">¿Desea ser contactado para seguimiento y notificaciones?</label>
+            <select id="denuncia-notificaciones" name="notificaciones" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="Sí">Sí, deseo ser contactado</option>
+              <option value="No">No, prefiero mantener el anonimato total</option>
+            </select>
+    
+            <label for="denuncia-email">Correo electrónico (necesario si desea notificaciones):</label>
+            <input type="email" id="denuncia-email" name="_replyto" placeholder="suemail@example.com"> 
+            
+            <label for="denuncia-telefono">Teléfono (opcional, útil si desea notificaciones):</label>
+            <input type="tel" id="denuncia-telefono" name="telefono" placeholder="Ej: 0991234567">
+          </fieldset>
+    
+          <fieldset>
+            <legend>Información sobre su Vinculación</legend>
+            
+            <p>¿Es usted trabajador/a de la empresa?</p>
+            <label><input type="radio" name="es_trabajador" value="Sí" required> Sí</label>
+            <label><input type="radio" name="es_trabajador" value="No"> No</label>
+    
+            <p>¿Es usted la víctima directa de los hechos denunciados?</p>
+            <label><input type="radio" name="es_victima" value="Sí" required> Sí</label>
+            <label><input type="radio" name="es_victima" value="No"> No</label>
+          </fieldset>
+    
+          <fieldset>
+            <legend>Detalles de la Denuncia</legend>
+    
+            <p>Tipo de denuncia (seleccione todas las que apliquen):</p>
+            <label><input type="checkbox" name="tipo_denuncia[]" value="Acoso"> Acoso</label>
+            <label><input type="checkbox" name="tipo_denuncia[]" value="Discriminacion"> Discriminación</label>
+            <label><input type="checkbox" name="tipo_denuncia[]" value="Violencia"> Violencia</label>
+            <label><input type="checkbox" name="tipo_denuncia[]" value="Corrupcion"> Corrupción</label>
+            <label><input type="checkbox" name="tipo_denuncia[]" value="Accidente Laboral"> Accidente Laboral</label>
+            <label>
+              <input type="checkbox" name="tipo_denuncia[]" value="Otro" onchange="document.getElementById('denuncia-tipo-otro-especificar').disabled = !this.checked; document.getElementById('denuncia-tipo-otro-especificar').required = this.checked;"> Otro tipo
+            </label>
+            <input type="text" id="denuncia-tipo-otro-especificar" name="tipo_denuncia_otro_descripcion" placeholder="Por favor, especifique otro tipo" disabled style="margin-top: 5px; margin-bottom: 10px;">
+            
+            <label for="denuncia-descripcion">Descripción detallada de los hechos (sea lo más específico posible):</label>
+            <textarea id="denuncia-descripcion" name="descripcion" rows="6" required placeholder="Describa qué ocurrió, quiénes estuvieron involucrados, etc."></textarea>
+    
+            <label for="denuncia-fecha">Fecha aproximada de los hechos:</label>
+            <input type="date" id="denuncia-fecha" name="fecha" required>
+    
+            <label for="denuncia-lugar">Lugar donde ocurrieron los hechos:</label>
+            <input type="text" id="denuncia-lugar" name="lugar" placeholder="Ej: Oficina principal, área de producción" required>
+            
+            <label for="denuncia-denunciado">Persona(s) contra quien(es) se dirige la denuncia (si aplica):</label>
+            <input type="text" id="denuncia-denunciado" name="denunciado" placeholder="Nombres, cargos si los conoce">
+    
+            <label for="denuncia-testigos">Persona(s) que presenciaron los hechos (si aplica y los conoce):</label>
+            <input type="text" id="denuncia-testigos" name="testigos" placeholder="Nombres, cargos si los conoce">
+    
+            <!--
+            <label for="denuncia-adjuntos">Adjuntar evidencias (fotos, documentos, etc. Max 10MB por archivo):</label>
+            <input type="file" id="denuncia-adjuntos" name="adjuntos[]" multiple> 
+            -->
+          </fieldset>
+          
+          <button type="submit" class="btn-primary">Enviar Denuncia</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <p>Guayaquil – Ecuador | +593 998287710 | <a href="mailto:juan@sorialegal.com">juan@sorialegal.com</a></p>
+    <p>Síguenos en <a href="https://www.linkedin.com/company/sorialegal" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJ+8g5x7n2Qv2cCk3z+3TfTEIYQw4j0KbfGJo="
+    crossorigin="anonymous">
+  </script>
+</body>
+</html>
