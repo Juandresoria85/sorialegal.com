@@ -1,3 +1,17 @@
+:root {
+  --color-primary: #012E40;
+  --color-secondary: #036280;
+  --color-accent: #5AA8DD;
+  --color-bg-light: #F4F4F4;
+  --color-text-dark: #333333;
+  --color-text-medium: #666666;
+  --color-white: #FFFFFF;
+  --color-success: #2A9D8F;
+  --color-warning: #E9C46A;
+  --color-error: #E63946;
+  --color-border-form: #CCCCCC;
+}
+
 /* Reset básico */
 * {
   margin: 0;
@@ -7,14 +21,14 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
 }
 
 /* HEADER */
 .main-header {
-  background-color: #012E40;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,10 +36,18 @@ body {
 }
 .logo { font-size: 1.5rem; font-weight: bold; }
 nav ul { list-style: none; display: flex; gap: 1rem; }
-nav a { color: white; text-decoration: none; font-weight: 500; }
+nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--color-accent);
+}
 
 /* HERO / CARRUSEL */
-.hero { position: relative; overflow: hidden; background-color: #012E40; }
+.hero { position: relative; overflow: hidden; background-color: var(--color-primary); }
 .owl-carousel .item img {
   width: 100%;
   height: auto;
@@ -35,32 +57,63 @@ nav a { color: white; text-decoration: none; font-weight: 500; }
   position: absolute;
   top:50%; left:50%;
   transform:translate(-50%,-50%);
-  color: white; text-align:center;
+  color: var(--color-white); text-align:center;
 }
 
 /* BOTONES */
-.btn {
+.btn-primary { /* Renamed from .btn */
   display:inline-block;
   margin:1rem;
   padding:0.75rem 1.5rem;
-  background-color:#036280;
-  color:white;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
   text-decoration:none;
   border-radius:4px;
   font-weight:bold;
   cursor:pointer;
+  border: 1px solid transparent; /* Added for consistency with secondary */
+  transition: background-color 0.2s, color 0.2s;
 }
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white); /* Ensure text color remains white or changes if accent needs it */
+}
+
+.btn-secondary {
+  display:inline-block;
+  margin:1rem;
+  padding:0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--color-secondary);
+  text-decoration:none;
+  border-radius:4px;
+  font-weight:bold;
+  cursor:pointer;
+  border: 1px solid var(--color-secondary);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bg-light);
+  color: var(--color-secondary);
+}
+
 
 /* SECCIONES */
 .nosotros, .servicios, .productos,
 .consulta, .publicaciones {
   padding:4rem 2rem;
   text-align:center;
+  background-color: transparent; /* Body is now --color-bg-light */
 }
 .perfil img {
   width:150px;
   border-radius:50%;
   margin:1rem 0;
+}
+.perfil p {
+  color: var(--color-text-medium);
 }
 
 /* GRID */
@@ -71,10 +124,13 @@ nav a { color: white; text-decoration: none; font-weight: 500; }
   margin-top:2rem;
 }
 .card {
-  background:white;
+  background: var(--color-white);
   padding:2rem;
   border-radius:8px;
   box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+.card p {
+  color: var(--color-text-medium);
 }
 
 /* LISTAS */
@@ -95,8 +151,14 @@ form input, form textarea {
   width:100%;
   padding:0.5rem;
   margin-bottom:1rem;
-  border:1px solid #ccc;
+  border:1px solid var(--color-border-form);
   border-radius:4px;
+  background-color: var(--color-white);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+form input:focus, form textarea:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 2px rgba(3, 98, 128, 0.4); /* Secondary with alpha */
 }
 form label {
   display:block;
@@ -112,10 +174,114 @@ footer {
   padding:2rem 1rem;
   font-size:0.9rem;
 }
-footer a { color:#7FDBFF; text-decoration:none; }
+footer a {
+  color: var(--color-secondary); /* Changed to match social icon color feedback */
+  text-decoration:none;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: var(--color-primary); /* Changed to match social icon hover feedback */
+}
 
 /* RESPONSIVE */
 @media(max-width:768px){
   .main-header { flex-direction:column; }
   nav ul { flex-direction:column; align-items:center; }
+}
+
+/* Adjustments for smaller mobile screens */
+@media (max-width: 576px) {
+  .main-header {
+    padding: 1rem 1rem; /* Reduced header padding */
+  }
+  .nosotros, .servicios, .productos, .consulta, .publicaciones, .publicaciones-linkedin, .redes-sociales {
+    padding: 1.5rem 1rem; /* Further Reduced section padding as per feedback */
+  }
+  .hero-text h1 {
+    font-size: 1.8rem; /* Adjust hero text size for smaller screens */
+  }
+}
+
+/* Utility Classes (simple versions) */
+.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.text-center { text-align: center !important; }
+.h5 { font-size: 1.25rem; /* Example size */ }
+.small { font-size: 0.875em; /* Example size */ }
+.container { /* Basic container for max-width and centering */
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) { .container { max-width: 540px; } }
+@media (min-width: 768px) { .container { max-width: 720px; } }
+@media (min-width: 992px) { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+
+
+/* Publicaciones de LinkedIn Section */
+.publicaciones-linkedin {
+  background-color: var(--color-white); /* Changed to white as per user image */
+  /* padding is handled by py-5 utility class */
+}
+
+.publicaciones-linkedin h2 {
+  color: var(--color-primary); 
+  /* margin-bottom is handled by mb-4 utility class */
+}
+
+.publicaciones-linkedin .list-publicaciones {
+  /* max-width is handled by .container */
+}
+
+.publicaciones-linkedin .publicacion-item {
+  background-color: var(--color-white); 
+  padding: 1.5rem;
+  border-radius: 8px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  /* margin-bottom is handled by mb-4 utility class */
+  text-align: left; /* Override general section text-align:center */
+}
+
+.publicaciones-linkedin .publicacion-item h3 a { /* h3 has .h5 class */
+  color: var(--color-secondary); 
+  text-decoration: none;
+  font-weight: bold; /* Making titles pop a bit more */
+}
+
+.publicaciones-linkedin .publicacion-item h3 a:hover {
+  color: var(--color-accent); 
+  text-decoration: underline;
+}
+
+.publicaciones-linkedin .publicacion-item .text-muted { /* has .small class */
+  color: var(--color-text-medium) !important; 
+  display: block; /* Ensure it takes its own line if needed */
+  margin-bottom: 1rem; /* Space before the button */
+}
+
+.publicaciones-linkedin .btn-secondary.btn-sm { /* specific for small secondary buttons */
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem; /* standard small size */
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+
+/* Redes Sociales Section (repurposed from .publicaciones) */
+.redes-sociales {
+   background-color: var(--color-bg-light); /* Keep it distinct or use white if preferred */
+   /* padding is handled by py-5 utility class */
+}
+.redes-sociales h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem; /* Space after heading */
+}
+.redes-sociales p {
+    color: var(--color-text-medium);
+    margin-bottom: 1.5rem; /* Space before button */
 }
