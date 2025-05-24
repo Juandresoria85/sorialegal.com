@@ -105,7 +105,8 @@ nav a:hover {
   top:50%; left:50%;
   transform:translate(-50%,-50%);
   color: var(--color-white); text-align:center;
-  /* z-index, width, max-width, position, top, left, transform moved to .hero-content-wrapper */
+  color: var(--color-white); /* Ensure .hero-text itself has white color */
+  text-align: center; /* Ensure text within this div is centered */
 }
 
 .hero-content-wrapper {
@@ -114,17 +115,22 @@ nav a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2; /* On top of overlay */
-  text-align: center; 
   width: 90%; 
   max-width: 1200px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Replaces text-align for flex item centering */
 }
 
 .hero-text h1 { 
-    margin-bottom: 1.5rem; 
+  margin-bottom: 1rem; /* Adjusted */
+  color: var(--color-white); /* Explicitly set, though inherited */
+  text-align: center; /* Ensure h1 content itself is centered */
 }
 
 .hero-cta {
-    margin-top: 1.5rem; 
+  margin-top: 1rem; /* Adjusted */
+  text-align: center; /* Ensure button is centered if .hero-cta is wider */
 }
 
 /* BOTONES */
@@ -436,7 +442,7 @@ hr.my-5 {
   overflow: hidden;
   width: 100%;
   max-width: 504px; /* Original width of iframe, acts as max */
-  margin: 0 auto 2rem auto; /* Center container, add bottom margin */
+  margin: 0 auto 1rem auto; /* Reduced bottom margin */
   /* Aspect ratio padding-bottom: (height / width) * 100% = (568 / 504) * 100% */
   padding-bottom: 112.698%; /* 568 / 504 = 1.126984127 */
 }
@@ -448,6 +454,10 @@ hr.my-5 {
   width: 100%;
   height: 100%;
   border: 0; /* Good practice, though iframe has frameborder="0" */
+}
+
+.publicaciones-linkedin .list-publicaciones > p.text-center.mt-5 {
+  margin-top: 1.5rem; /* Reduced from 3rem (via .mt-5) */
 }
 
 /* Redes Sociales Section (repurposed from .publicaciones) */
