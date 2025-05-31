@@ -123,15 +123,17 @@ nav a:hover {
 }
 
 .hero-text h1 { 
-  margin-bottom: 1rem; /* Adjusted */
+  /* margin-bottom: 1rem; /* Removed as CTA is gone */
   color: var(--color-white); /* Explicitly set, though inherited */
   text-align: center; /* Ensure h1 content itself is centered */
 }
 
+/*
 .hero-cta {
-  margin-top: 1rem; /* Adjusted */
-  text-align: center; /* Ensure button is centered if .hero-cta is wider */
+  margin-top: 1rem; 
+  text-align: center; 
 }
+*/
 
 /* BOTONES */
 .btn-primary { /* Renamed from .btn */
